@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <!-- style CSS  -->
+    <style>
+    .main{
+     text-align: center;
+     margin-left: 454px;
+     margin-top: 214px;
+     box-shadow: 0 0 5px black;
+     padding: 20px;
+     width: 512px; 
+     border-radius: 5px;
+     border-width: 50%;
+    }
+    h1{
+        margin-bottom: 14px;
+        padding-bottom: 14px;
+        font-size: 65px;
+        font-weight: 800;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        color:rgb(247, 2, 182);
+
+    }
+    .btn-oprator{
+        display: block;
+        margin: 14px, 24px;
+    }
+    #btn-1, #btn-2{
+        margin: 0px 12px;
+        padding: 12px 22px;
+        color: white;
+        font-size: 18px;
+        background-color: rgb(158, 59, 250);
+        border:1px solid  rgb(72, 0, 139);
+        border-radius: 24px;
+    }
+    #btn-1:hover, #btn-2:hover{
+        background-color: rgb(134, 9, 251);
+      
+    }
+    #btn-reset:hover{
+        background-color:rgb(250, 2, 43) ;
+    }
+    
+    #displayValue {
+     font-size: 25px;
+     padding: 5px 15px;
+      border: 1px solid black;
+     }
+    #btn-reset{
+        margin: 18px 12px;
+        padding: 10px 74px;
+        color: white;
+        font-size: 18px;
+        background-color: rgb(255, 62, 94);
+        /* background-color: rgb(251, 124, 145); */
+        border:1px solid rgb(149, 0, 25);
+        border-radius: 24px;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <h1>Counter App</h1>
+    <div class="btn-oprator">
+    <button id="btn-1" onclick="">Decrement-1</button>
+    <span id="displayValue">1</span>
+    <button id="btn-2" onclick="">Increment-1</button>
+    </div>
+    <button id="btn-reset">Reset</button>
+    </div>
+   
+    
+    <!-- JavaScript  -->
+     <script>
+      const decrementbtn = document.getElementById("btn-1");
+      const incrementbtn = document.getElementById("btn-2");
+      const displayscreen = document.getElementById("displayValue");
+      const Resetbtn = document.getElementById("btn-reset");
+      // decrement btn
+      decrementbtn.addEventListener("click", decrementvalue = ()=>{
+           const value = Number(displayscreen.innerText);
+           if(value>0){
+            displayscreen.innerText = value -1;
+           }
+           else{
+            alert("negative value is not allowed")
+           }
+
+      });
+      // increment btn
+      incrementbtn.addEventListener("click", incrementvalue = ()=>{
+            const value = Number(displayscreen.innerText);
+            displayscreen.innerText = value +1;
+      })
+      // reset 
+      Resetbtn.addEventListener("click", resetValue = ()=>{
+        const value = Number(displayscreen.innerText);
+        displayscreen.innerText = "0";
+      })
+       
+     
+     </script>
+
+</body>
+</html>
